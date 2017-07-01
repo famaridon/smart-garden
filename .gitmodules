@@ -1,0 +1,3 @@
+[submodule "devices/watering-timer"]
+	path = devices/watering-timer
+	url = https://github.com/famaridon/smart-garden-devices-watering-timer.git
