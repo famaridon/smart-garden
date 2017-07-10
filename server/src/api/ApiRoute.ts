@@ -1,3 +1,4 @@
+import * as winston from "winston";
 import { NextFunction, Request, Response, Router } from "express";
 
 export class ApiRoute  {
@@ -22,6 +23,7 @@ export class ApiRoute  {
 
   private async getDevice(req: Request, res: Response):Promise<void> {
     let id : number = req.params.id
+    winston.info(`GET /devices/${id}`);
     let device: Device | undefined = this.devices.get(id);
     if(!device){
       device = new Device();
@@ -35,6 +37,8 @@ export class ApiRoute  {
   private async putDevice(req: Request, res: Response):Promise<void> {
     let id : number = req.params.id
     let updatedDevice:Device = req.body;
+    winston.info(`PUT /devices/${id}`);
+
     let device: Device | undefined = this.devices.get(id);
     if(!device){
       device = new Device();

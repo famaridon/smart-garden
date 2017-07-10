@@ -5,7 +5,6 @@ import * as path from "path";
 
 import {ApiRoute} from './api/ApiRoute'
 
-
 class Server {
 
   public app: express.Application;
