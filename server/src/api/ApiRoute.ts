@@ -30,6 +30,10 @@ export class ApiRoute  {
       device.id = id;
       this.devices.set(id, device);
     }
+    if(req.header("X-Device-ID") && req.header("X-Device-ID") == id.toString()){
+      device.lastAccess = new Date();
+      winston.info(`Update lastAccess on device ${id} at ${device.lastAccess}.`)
+    }
     device.accessCount++;
     res.json(device);
   }
@@ -37,7 +41,7 @@ export class ApiRoute  {
   private async putDevice(req: Request, res: Response):Promise<void> {
     let id : number = req.params.id
     let updatedDevice:Device = req.body;
-    winston.info(`PUT /devices/${id}`);
+    winston.debug(`PUT /devices/${id}`);
 
     let device: Device | undefined = this.devices.get(id);
     if(!device){
@@ -56,6 +60,7 @@ export class Device {
   public id : number;
   public status : number;
   public accessCount : number;
+  public lastAccess : Date;
   constructor(){
     this.accessCount = 0;
   }
