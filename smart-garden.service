@@ -1,0 +1,21 @@
+[Unit]
+Description=smart-garden server
+
+[Service]
+ExecStartPre=/usr/bin/git pull
+ExecStart=/usr/bin/npm run start:daemon
+# Required on some systems 
+WorkingDirectory=/opt/smart-garden/
+Restart=always
+ # Restart service after 10 seconds if node service crashes
+ RestartSec=10
+ # Output to syslog
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=smart-garden
+#User=<alternate user>
+#Group=docker
+#Environment=NODE_ENV=production PORT=1337
+
+[Install]
+WantedBy=multi-user.target
