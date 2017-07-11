@@ -27,8 +27,8 @@ class Server {
 
   public async start(): Promise<void>{
     winston.info('starting server.');
-    this.app.listen(3000, () => {
-      winston.info(`api is ready on http://localhost:3000/api/`);
+    this.app.listen(53000, () => {
+      winston.info(`api is ready on http://localhost:53000/api/`);
     });
     winston.info('server started');
   }
