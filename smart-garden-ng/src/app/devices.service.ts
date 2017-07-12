@@ -16,7 +16,11 @@ export class DevicesService {
   getDevice(id: number): Promise<any> {
     return this.http.get("/api/devices/" + id)
     .toPromise()
-    .then(response => response.json() as any )
+    .then(response => {
+      let device = response.json();
+      device.lastAccess = new Date(device.lastAccess);
+      return device;
+    })
     .catch(this.handleError);
   }
 

@@ -6,6 +6,7 @@ import { HttpModule }    from '@angular/http';
 
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MomentModule } from 'angular2-moment';
 
 import { AppComponent } from './app.component';
 import { DevicesService } from './devices.service';
@@ -19,7 +20,8 @@ import { DevicesService } from './devices.service';
     FormsModule,
     BrowserModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MomentModule
   ],
   providers: [
     DevicesService

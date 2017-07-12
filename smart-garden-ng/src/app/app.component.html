@@ -7,7 +7,7 @@
   <md-grid-tile>
     <md-card>
       <md-card-title>watering timer</md-card-title>
-      <md-card-content>Last access : {{wateringTimer.lastAccess}}</md-card-content>
+      <md-card-content>Last access : <time>{{wateringTimer.lastAccess | amTimeAgo}}</time></md-card-content>
       <md-card-actions>
         <md-slide-toggle [(ngModel)]="wateringTimer.status" (change)="onChange()" >watering</md-slide-toggle>
       </md-card-actions>
