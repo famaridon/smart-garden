@@ -1,5 +1,6 @@
 import * as winston from "winston";
 import * as express from "express";
+import { NextFunction, Request, Response, Router } from "express";
 import * as bodyParser from "body-parser";
 import * as path from "path";
 
@@ -23,6 +24,7 @@ class Server {
     this.router = express.Router();
     this.api= new ApiRoute(this.router);
     this.app.use('/api', this.router);
+    this.app.use(express.static('public'));
   }
 
   public async start(): Promise<void>{

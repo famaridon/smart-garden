@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<md-toolbar>
+  <span>{{title}}</span>
+</md-toolbar>
+
+<md-grid-list>
+  <md-grid-tile>
+    <md-card>
+      <md-card-title>watering timer</md-card-title>
+      <md-card-content>Last access : {{wateringTimer.lastAccess}}</md-card-content>
+      <md-card-actions>
+        <md-slide-toggle [checked]="wateringTimer.status == 1">watering</md-slide-toggle>
+      </md-card-actions>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>
