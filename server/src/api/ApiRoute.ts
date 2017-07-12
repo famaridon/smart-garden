@@ -1,4 +1,5 @@
 import * as winston from "winston";
+import * as cors from "cors";
 import { NextFunction, Request, Response, Router } from "express";
 
 export class ApiRoute  {
@@ -9,6 +10,7 @@ export class ApiRoute  {
   constructor(router: Router) {
     //log
     this.router = router;
+    router.use(cors());
     this.devices = new Map();
 
     this.router.route('/devices/:id')
