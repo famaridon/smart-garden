@@ -18,7 +18,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.devicesService.getDevice(1190842).then(wateringTimer => this.wateringTimer = wateringTimer);
+    this.wateringTimer = {status:-1, lastAccess:new Date(0)};
+    this.devicesService.getDevice(1190842).then(wateringTimer => {
+      this.wateringTimer = wateringTimer
+    });
+  }
+
+  onChange(){
+    this.devicesService.updateDevice(this.wateringTimer);
   }
 
 }

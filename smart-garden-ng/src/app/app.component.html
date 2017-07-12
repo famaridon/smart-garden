@@ -3,13 +3,13 @@
   <span>{{title}}</span>
 </md-toolbar>
 
-<md-grid-list>
+<md-grid-list cols="1" rowHeight="16:9">
   <md-grid-tile>
     <md-card>
       <md-card-title>watering timer</md-card-title>
       <md-card-content>Last access : {{wateringTimer.lastAccess}}</md-card-content>
       <md-card-actions>
-        <md-slide-toggle [checked]="wateringTimer.status == 1">watering</md-slide-toggle>
+        <md-slide-toggle [(ngModel)]="wateringTimer.status" (change)="onChange()" >watering</md-slide-toggle>
       </md-card-actions>
     </md-card>
   </md-grid-tile>
