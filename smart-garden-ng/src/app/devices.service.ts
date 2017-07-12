@@ -14,7 +14,7 @@ export class DevicesService {
   }
 
   getDevice(id: number): Promise<any> {
-    return this.http.get("http://smart-garden.famaridon.com:53000/api/devices/" + id)
+    return this.http.get("/api/devices/" + id)
     .toPromise()
     .then(response => response.json() as any )
     .catch(this.handleError);
@@ -22,7 +22,7 @@ export class DevicesService {
 
   updateDevice(device: any): Promise<any> {
     let updated = {status: device.status ? 1 : 0};
-    return this.http.put("http://smart-garden.famaridon.com:53000/api/devices/" + device.id, updated)
+    return this.http.put("/api/devices/" + device.id, updated)
     .toPromise()
     .catch(this.handleError);
   }

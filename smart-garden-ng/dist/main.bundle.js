@@ -168,14 +168,14 @@ var DevicesService = (function () {
         this.http = http;
     }
     DevicesService.prototype.getDevice = function (id) {
-        return this.http.get("http://smart-garden.famaridon.com:53000/api/devices/" + id)
+        return this.http.get("/api/devices/" + id)
             .toPromise()
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     DevicesService.prototype.updateDevice = function (device) {
         var updated = { status: device.status ? 1 : 0 };
-        return this.http.put("http://smart-garden.famaridon.com:53000/api/devices/" + device.id, updated)
+        return this.http.put("/api/devices/" + device.id, updated)
             .toPromise()
             .catch(this.handleError);
     };
