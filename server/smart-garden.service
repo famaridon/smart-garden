@@ -13,8 +13,8 @@ Restart=always
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=smart-garden
-#User=<alternate user>
-#Group=docker
+User=famaridon
+Group=famaridon
 #Environment=NODE_ENV=production PORT=1337
 
 [Install]
