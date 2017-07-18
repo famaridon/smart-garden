@@ -24,7 +24,7 @@ We need power ESP8266 betwen 3.0V < VOUT < 3.6V. Lets go an calculate all resist
 * ![R2=(\frac{3.3}{1.25}-1)*240=360\Omega](http://latex.codecogs.com/gif.latex?R2%3D%28%5Cfrac%7B3.3%7D%7B1.25%7D-1%29*220%3D360%5COmega)
 
 ## Check E12 resistance
-In E12 serie we have 390&#937; check if 390&#937; can suit.
+In E12 serie we only have 390&#937; check if it can suit.
 
 * ![V_{OUT}=V_{REF}*(1+\frac{R2}{R1})](http://latex.codecogs.com/gif.latex?V_%7BOUT%7D%3DV_%7BREF%7D*%281&plus;%5Cfrac%7BR2%7D%7BR1%7D%29)
 * ![V_{OUT}=1.25*(1+\frac{390}{220})=3.46v](http://latex.codecogs.com/gif.latex?V_%7BOUT%7D%3D1.25*%281&plus;%5Cfrac%7B390%7D%7B220%7D%29%3D3.46v)
