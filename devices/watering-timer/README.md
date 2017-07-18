@@ -4,7 +4,7 @@
 
 We need power ESP8266 betwen 3.0V~3.6V. 
 
-I will use a LM317LZ an adjustable regulator. In it's [datasheet](http://www.ti.com/lit/ds/symlink/lm317.pdf) we can found at "8. Application and Implementation" how to use the LM317 in typical DC power application.
+I will use a LM317 an adjustable regulator. In it's [datasheet](http://www.ti.com/lit/ds/symlink/lm317.pdf) we can found at "8. Application and Implementation" how to use the LM317 in typical DC power application.
 
 We need power ESP8266 betwen 3.0V < VOUT < 3.6V. Lets go an calculate all resistance.
 
